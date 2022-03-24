@@ -10,6 +10,12 @@
       "email": "michel.chowanski@bestit-online.de"
     }
   ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/kozlice/flagception-sdk"
+    }
+  ],
   "require": {
     "php": "^7.1.3 | ^8",
     "symfony/dependency-injection": "^4.4 | ^5.0 | ^6.0",
@@ -18,7 +24,7 @@
     "symfony/http-kernel": "^4.4 | ^5.0 | ^6.0",
     "twig/twig": "^1.18|^2.0|^3.0",
     "doctrine/annotations": "^1.7",
-    "flagception/flagception": "^1.7"
+    "flagception/flagception": "dev-allow-new-psr-cache"
   },
   "require-dev": {
     "symfony/phpunit-bridge": "^5.0",

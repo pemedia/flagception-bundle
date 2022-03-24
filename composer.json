@@ -13,7 +13,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/kozlice/flagception-sdk"
+      "url": "https://github.com/pemedia/flagception-sdk"
     }
   ],
   "require": {

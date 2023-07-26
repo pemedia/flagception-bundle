@@ -18,7 +18,7 @@ class CookieConfigurator implements ActivatorConfiguratorInterface
     /**
      * {@inheritdoc}
      */
-    public function getKey()
+    public function getKey(): string
     {
         return 'cookie';
     }
@@ -26,7 +26,7 @@ class CookieConfigurator implements ActivatorConfiguratorInterface
     /**
      * {@inheritdoc}
      */
-    public function addActivator(ContainerBuilder $container, array $config, array $features)
+    public function addActivator(ContainerBuilder $container, array $config, array $features): void
     {
         if ($config['enable'] === false) {
             return;
@@ -64,14 +64,14 @@ class CookieConfigurator implements ActivatorConfiguratorInterface
     /**
      * {@inheritdoc}
      */
-    public function addConfiguration(ArrayNodeDefinition $node)
+    public function addConfiguration(ArrayNodeDefinition $node): void
     {
         $node
             ->children()
                 ->booleanNode('enable')
                     ->beforeNormalization()
                         ->ifString()
-                        ->then(function ($value) {
+                        ->then(function ($value): bool {
                             return filter_var($value, FILTER_VALIDATE_BOOLEAN);
                         })
                     ->end()

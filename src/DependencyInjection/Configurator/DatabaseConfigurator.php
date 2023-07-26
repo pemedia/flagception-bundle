@@ -21,7 +21,7 @@ class DatabaseConfigurator implements ActivatorConfiguratorInterface
     /**
      * {@inheritdoc}
      */
-    public function getKey()
+    public function getKey(): string
     {
         return 'database';
     }
@@ -74,7 +74,7 @@ class DatabaseConfigurator implements ActivatorConfiguratorInterface
     /**
      * {@inheritdoc}
      */
-    public function addConfiguration(ArrayNodeDefinition $node)
+    public function addConfiguration(ArrayNodeDefinition $node): void
     {
         $node
             ->addDefaultsIfNotSet(['enable' => false])
@@ -91,7 +91,7 @@ class DatabaseConfigurator implements ActivatorConfiguratorInterface
                 ->booleanNode('enable')
                     ->beforeNormalization()
                         ->ifString()
-                        ->then(function ($value) {
+                        ->then(function ($value): bool {
                             return filter_var($value, FILTER_VALIDATE_BOOLEAN);
                         })
                     ->end()
@@ -156,7 +156,7 @@ class DatabaseConfigurator implements ActivatorConfiguratorInterface
                         ->booleanNode('enable')
                             ->beforeNormalization()
                                 ->ifString()
-                                ->then(function ($value) {
+                                ->then(function ($value): bool {
                                     return filter_var($value, FILTER_VALIDATE_BOOLEAN);
                                 })
                             ->end()

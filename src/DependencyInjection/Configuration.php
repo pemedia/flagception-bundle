@@ -56,7 +56,7 @@ class Configuration implements ConfigurationInterface
                             ->booleanNode('cookie')
                                 ->beforeNormalization()
                                     ->ifString()
-                                    ->then(function ($value) {
+                                    ->then(function ($value): bool {
                                         return filter_var($value, FILTER_VALIDATE_BOOLEAN);
                                     })
                                 ->end()
@@ -75,7 +75,7 @@ class Configuration implements ConfigurationInterface
                         ->booleanNode('enable')
                             ->beforeNormalization()
                                 ->ifString()
-                                ->then(function ($value) {
+                                ->then(function ($value): bool {
                                     return filter_var($value, FILTER_VALIDATE_BOOLEAN);
                                 })
                             ->end()
@@ -89,7 +89,7 @@ class Configuration implements ConfigurationInterface
                         ->booleanNode('enable')
                             ->beforeNormalization()
                                 ->ifString()
-                                ->then(function ($value) {
+                                ->then(function ($value): bool {
                                     return filter_var($value, FILTER_VALIDATE_BOOLEAN);
                                 })
                             ->end()
